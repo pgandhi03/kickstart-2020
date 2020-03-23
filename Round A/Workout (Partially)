@@ -1,0 +1,30 @@
+t=int(input())
+for pp in range(1,t+1):
+    n,k=map(int,input().split())
+    m=list(map(int,input().split()))
+    di=[]
+    ma=0
+    ind=0
+    for i in range(n-1):
+        lll=m[i+1]-m[i]
+        if(lll>ma):
+            ma=lll
+            ind=i
+        di.append(m[i+1]-m[i])
+    for _ in range(k):
+        p=ma//2
+        q=ma-p
+        di.pop(ind)
+        di.insert(ind,q)
+        di.insert(ind,p)
+        ma=di[0]
+        ind=0
+        for i in range(len(di)):
+            if(di[i]>ma):
+                ma=di[i]
+                ind=i
+                
+    print("Case #"+str(pp)+":",ma)
+    
+    
+    
