@@ -1,0 +1,14 @@
+#bus
+
+for t in range(int(input())):
+    n,d=map(int,input().split())
+    x=list(map(int,input().split()))
+    day=d
+    for i in range(n-1,-1,-1):
+        if(day%x[i]==0):
+            pass
+        else:
+            day-=day%x[i]
+            
+    l=str(t+1)
+    print("Case #"+l+":",day)
